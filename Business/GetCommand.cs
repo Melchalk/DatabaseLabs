@@ -13,17 +13,8 @@ public class GetCommand : IGetCommand
         _repository = repository;
     }
 
-    public GetStudentResponse? Execute(Guid id)
+    public async Task<GetStudentResponse?> ExecuteAsync(Guid id)
     {
-        var student = _repository.Students.FirstOrDefault(x => x.Id == id);
-
-        return student is null
-            ? null
-            : new()
-            {
-                Name = student.Name,
-                Course = student.Course,
-                University = student.University,
-            };
+        return await _repository.Get(id); ;
     }
 }

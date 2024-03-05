@@ -2,7 +2,7 @@
 
 public class GetStudentResponse
 {
-    public required string Name { get; set; }
+    public string? Name { get; set; }
     public int Course { get; set; }
-    public required string University { get; set; }
+    public string? University { get; set; }
 }

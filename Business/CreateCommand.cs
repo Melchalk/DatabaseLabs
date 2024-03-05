@@ -37,7 +37,7 @@ public class CreateCommand : ICreateCommand
             University = request.University,
         };
 
-        _repository.Students.Add(student);
+        _repository.Add(student);
 
         await _repository.SaveAsync();
 

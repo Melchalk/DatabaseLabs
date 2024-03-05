@@ -4,5 +4,5 @@ namespace Business.Interfaces;
 
 public interface IGetCommand
 {
-    GetStudentResponse? Execute(Guid id);
+    Task<GetStudentResponse?> ExecuteAsync(Guid id);
 }
